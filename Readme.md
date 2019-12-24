@@ -1,63 +1,19 @@
-## Git clone the application
+This is a simple API created using python and flask. It accepts an argument on http://127.0.0.1:5000/name should return " Hello name "
+Application has been dockerized and made available on my github repository.
 
-## Create a virtual environment inside the application 
+Clone the repository
+git clone git clone https://github.com/nishgupta29/vmfarms.git
 
-```python
+Run the application
+FLASK_APP=app.py
+flask run
+Or just run it using python app.py
 
-    virtualenv -p /usr/bin/python3 venv    
+Create the docker image using Dockerfile
 
-    source venv/bin/activate
+docker build -t vmfarms:latest .
 
-```
+Run the docker container using the newly created docker image
+docker run -it -d -p 5000:5000 vmfarms:latest
 
-## Install Python modules
-
-```python
-
-   pip3 install -r requirements.txt 
-    
-```
-
-
-## Run the application using
-
-```python
-
-    python app.py
-
-```
-
-
-## You will get below REST API
-
-```python
-
-        http://localhost:5000
-
-```
-
-## Docker commands
-
-```bash
-    
-        // List all running container
-        docker ps
-
-        // list all containers
-        docker ps -a
-
-
-        // list all docker images
-        docker images
-
-        // build a docker image
-        docker build -t <imageName:version> dockerFilePath
-
-        
-        // run a docker container in daemon mode with ports exposed
-        docker run -it -d -p <outsidePort>:<dockerInsidePort> <imageName:version>
-
-
-
-
-```
+Kubernetes deployment definition file has been written to deploy this application as a pod on kubernetes
