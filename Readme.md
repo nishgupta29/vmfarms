@@ -1,5 +1,6 @@
 This is a simple API created using python and flask. It accepts an argument on http://127.0.0.1:5000/name should return " Hello name "
 Application has been dockerized and made available on my github repository.
+Image is in the  repository.
 
 Clone the repository
 git clone git clone https://github.com/nishgupta29/vmfarms.git
