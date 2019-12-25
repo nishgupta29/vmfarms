@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     env: dev
-	app: flask
+    app: flask
   name: flaskapi
 spec:
   replicas: 3
